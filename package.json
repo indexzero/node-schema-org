@@ -1,0 +1,25 @@
+{
+  "name": "schema-org",
+  "description": "A node.js library that retrieves, parses and provides all schemas from schema.org",
+  "version": "0.0.1",
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/indexzero/node-schema-org.git" 
+  },
+  "keywords": ["schemas", "jsdom", "parsers"],
+  "dependencies": {
+    "colors": "0.x.x",
+    "jsdom": "0.2.x",
+    "neuron": "0.4.x",
+    "optimist": "0.2.x",
+    "pkginfo": "0.2.x",
+    "request": "1.9.x",
+    "winston": "0.3.x"
+  },
+  "scripts": { "test": "vows test/*-test.js --spec" },
+  "bin": {
+    "read-schema-org": "./bin/read-schema-org"
+  },
+  "engines": { "node": ">= 0.4.0" }
+}
