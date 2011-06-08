@@ -1,0 +1,170 @@
+{
+  "type": "Person",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "address",
+      "description": "Physical address of the item.",
+      "type": "PostalAddress"
+    },
+    {
+      "name": "affiliation",
+      "description": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "type": "Organization"
+    },
+    {
+      "name": "alumniOf",
+      "description": "An educational organizations that the person is an alumni of.",
+      "type": "EducationalOrganization"
+    },
+    {
+      "name": "awards",
+      "description": "Awards won by this person or for this creative work.",
+      "type": "Text"
+    },
+    {
+      "name": "birthDate",
+      "description": "Date of birth.",
+      "type": "Date"
+    },
+    {
+      "name": "children",
+      "description": "A child of the person.",
+      "type": "Person"
+    },
+    {
+      "name": "colleagues",
+      "description": "A colleague of the person.",
+      "type": "Person"
+    },
+    {
+      "name": "contactPoints",
+      "description": "A contact point for a person or organization.",
+      "type": "ContactPoint"
+    },
+    {
+      "name": "deathDate",
+      "description": "Date of death.",
+      "type": "Date"
+    },
+    {
+      "name": "email",
+      "description": "Email address.",
+      "type": "Text"
+    },
+    {
+      "name": "faxNumber",
+      "description": "The fax number.",
+      "type": "Text"
+    },
+    {
+      "name": "follows",
+      "description": "The most generic uni-directional social relation.",
+      "type": "Person"
+    },
+    {
+      "name": "gender",
+      "description": "Gender of the person.",
+      "type": "Text"
+    },
+    {
+      "name": "homeLocation",
+      "description": "A contact location for a person's residence.",
+      "type": [
+        "Place",
+        "ContactPoint"
+      ]
+    },
+    {
+      "name": "interactionCount",
+      "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+      "type": "Text"
+    },
+    {
+      "name": "jobTitle",
+      "description": "The job title of the person (for example, Financial Manager).",
+      "type": "Text"
+    },
+    {
+      "name": "knows",
+      "description": "The most generic bi-directional social/work relation.",
+      "type": "Person"
+    },
+    {
+      "name": "memberOf",
+      "description": "An organization to which the person belongs.",
+      "type": "Organization"
+    },
+    {
+      "name": "nationality",
+      "description": "Nationality of the person.",
+      "type": "Country"
+    },
+    {
+      "name": "parents",
+      "description": "A parents of the person.",
+      "type": "Person"
+    },
+    {
+      "name": "performerIn",
+      "description": "Event that this person is a performer or participant in.",
+      "type": "Event"
+    },
+    {
+      "name": "relatedTo",
+      "description": "The most generic familial relation.",
+      "type": "Person"
+    },
+    {
+      "name": "siblings",
+      "description": "A sibling of the person.",
+      "type": "Person"
+    },
+    {
+      "name": "spouse",
+      "description": "The person's spouse.",
+      "type": "Person"
+    },
+    {
+      "name": "telephone",
+      "description": "The telephone number.",
+      "type": "Text"
+    },
+    {
+      "name": "workLocation",
+      "description": "A contact location for a person's place of work.",
+      "type": [
+        "Place",
+        "ContactPoint"
+      ]
+    },
+    {
+      "name": "worksFor",
+      "description": "Organizations that the person works for.",
+      "type": "Organization"
+    }
+  ]
+}

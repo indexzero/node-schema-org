@@ -1,0 +1,44 @@
+{
+  "type": "GeoCoordinates",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "elevation",
+      "description": "The elevation of a location.",
+      "type": "Number or Text"
+    },
+    {
+      "name": "latitude",
+      "description": "The latitude of a location. For example <code>37.42242</code>.",
+      "type": "Number or Text"
+    },
+    {
+      "name": "longitude",
+      "description": "The longitude of a location. For example <code>-122.08585</code>.",
+      "type": "Number or Text"
+    }
+  ]
+}

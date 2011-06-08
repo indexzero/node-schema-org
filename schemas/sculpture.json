@@ -1,0 +1,132 @@
+{
+  "type": "Sculpture",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "CreativeWork": [
+      {
+        "name": "about",
+        "description": "The subject matter of the content.",
+        "type": "Thing"
+      },
+      {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      {
+        "name": "audio",
+        "description": "An embeded audio object or URL associated with the content.",
+        "type": "AudioObject"
+      },
+      {
+        "name": "author",
+        "description": "The author of this content. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangabely.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
+      },
+      {
+        "name": "awards",
+        "description": "Awards won by this person or for this creative work.",
+        "type": "Text"
+      },
+      {
+        "name": "contentLocation",
+        "description": "The location of the content.",
+        "type": "Place"
+      },
+      {
+        "name": "contentRating",
+        "description": "Official rating of a piece of content&mdash;for example,'MPAA PG-13'.",
+        "type": "Text"
+      },
+      {
+        "name": "datePublished",
+        "description": "Date of first broadcast/publication.",
+        "type": "Date"
+      },
+      {
+        "name": "editor",
+        "description": "Editor for this content.",
+        "type": "Person"
+      },
+      {
+        "name": "encodings",
+        "description": "The media objects that encode this creative work",
+        "type": "MediaObject"
+      },
+      {
+        "name": "genre",
+        "description": "Genre of the creative work",
+        "type": "Text"
+      },
+      {
+        "name": "headline",
+        "description": "Headline of the article",
+        "type": "Text"
+      },
+      {
+        "name": "inLanguage",
+        "description": "The language of the content. please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard.</a>",
+        "type": "Text"
+      },
+      {
+        "name": "interactionCount",
+        "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+        "type": "Text"
+      },
+      {
+        "name": "isFamilyFriendly",
+        "description": "Indicates whether this content is family friendly.",
+        "type": "Boolean"
+      },
+      {
+        "name": "keywords",
+        "description": "The keywords/tags used to describe this content.",
+        "type": "Text"
+      },
+      {
+        "name": "offers",
+        "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+        "type": "Offer"
+      },
+      {
+        "name": "publisher",
+        "description": "The publisher of the creative work.",
+        "type": "Organization"
+      },
+      {
+        "name": "reviews",
+        "description": "Review of the item.",
+        "type": "Review"
+      },
+      {
+        "name": "video",
+        "description": "An embeded video object or URL associated with the content.",
+        "type": "VideoObject"
+      }
+    ]
+  }
+}

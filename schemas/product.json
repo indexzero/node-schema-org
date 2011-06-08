@@ -1,0 +1,64 @@
+{
+  "type": "Product",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "aggregateRating",
+      "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "type": "AggregateRating"
+    },
+    {
+      "name": "brand",
+      "description": "The brand of the product.",
+      "type": "Organization"
+    },
+    {
+      "name": "manufacturer",
+      "description": "The manufacturer of the product.",
+      "type": "Organization"
+    },
+    {
+      "name": "model",
+      "description": "The model of the product.",
+      "type": "Text"
+    },
+    {
+      "name": "offers",
+      "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+      "type": "Offer"
+    },
+    {
+      "name": "productID",
+      "description": "The product identifier, such as ISBN. For example: <code>&lt;meta itemprop='productID' content='isbn:123-456-789'/&gt;</code>.",
+      "type": "Text"
+    },
+    {
+      "name": "reviews",
+      "description": "Review of the item.",
+      "type": "Review"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "type": "NutritionInformation",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "calories",
+      "description": "The number of calories",
+      "type": "Energy"
+    },
+    {
+      "name": "carbohydrateContent",
+      "description": "The number of grams of carbohydrates.",
+      "type": "Mass"
+    },
+    {
+      "name": "cholesterolContent",
+      "description": "The number of milligrams of cholesterol.",
+      "type": "Mass"
+    },
+    {
+      "name": "fatContent",
+      "description": "The number of grams of fat.",
+      "type": "Mass"
+    },
+    {
+      "name": "fiberContent",
+      "description": "The number of grams of fiber.",
+      "type": "Mass"
+    },
+    {
+      "name": "proteinContent",
+      "description": "The number of grams of protein.",
+      "type": "Mass"
+    },
+    {
+      "name": "saturatedFatContent",
+      "description": "The number of grams of saturated fat.",
+      "type": "Mass"
+    },
+    {
+      "name": "servingSize",
+      "description": "The serving size, in terms of the number of volume or mass",
+      "type": "Text"
+    },
+    {
+      "name": "sodiumContent",
+      "description": "The number of milligrams of sodium.",
+      "type": "Mass"
+    },
+    {
+      "name": "sugarContent",
+      "description": "The number of grams of sugar.",
+      "type": "Mass"
+    },
+    {
+      "name": "transFatContent",
+      "description": "The number of grams of trans fat.",
+      "type": "Mass"
+    },
+    {
+      "name": "unsaturatedFatContent",
+      "description": "The number of grams of unsaturated fat.",
+      "type": "Mass"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "type": "SeaBodyOfWater",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "Place": [
+      {
+        "name": "address",
+        "description": "Physical address of the item.",
+        "type": "PostalAddress"
+      },
+      {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      {
+        "name": "containedIn",
+        "description": "The basic containment relation between places.",
+        "type": "Place"
+      },
+      {
+        "name": "events",
+        "description": "The events held at this place or organization.",
+        "type": "Event"
+      },
+      {
+        "name": "faxNumber",
+        "description": "The fax number.",
+        "type": "Text"
+      },
+      {
+        "name": "geo",
+        "description": "The geo coordinates of the place.",
+        "type": "GeoCoordinates"
+      },
+      {
+        "name": "interactionCount",
+        "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+        "type": "Text"
+      },
+      {
+        "name": "maps",
+        "description": "A URL to a map of the place.",
+        "type": "Map"
+      },
+      {
+        "name": "photos",
+        "description": "Photographs of this place.",
+        "type": [
+          "Photograph",
+          "ImageObject"
+        ]
+      },
+      {
+        "name": "reviews",
+        "description": "Review of the item.",
+        "type": "Review"
+      },
+      {
+        "name": "telephone",
+        "description": "The telephone number.",
+        "type": "Text"
+      }
+    ]
+  }
+}

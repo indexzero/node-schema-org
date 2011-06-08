@@ -1,0 +1,61 @@
+{
+  "type": "AggregateRating",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "Rating": [
+      {
+        "name": "bestRating",
+        "description": "The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.",
+        "type": "Number or Text"
+      },
+      {
+        "name": "ratingValue",
+        "description": "The rating for the content.",
+        "type": "Text"
+      },
+      {
+        "name": "worstRating",
+        "description": "The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.",
+        "type": "Number or Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "itemReviewed",
+      "description": "The item that is being reviewed/rated.",
+      "type": "Thing"
+    },
+    {
+      "name": "ratingCount",
+      "description": "The count of total number of ratings.",
+      "type": "Number"
+    },
+    {
+      "name": "reviewCount",
+      "description": "The count of total number of reviews.",
+      "type": "Number"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "type": "AudioObject",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "CreativeWork": [
+      {
+        "name": "about",
+        "description": "The subject matter of the content.",
+        "type": "Thing"
+      },
+      {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      {
+        "name": "audio",
+        "description": "An embeded audio object or URL associated with the content.",
+        "type": "AudioObject"
+      },
+      {
+        "name": "author",
+        "description": "The author of this content. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangabely.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
+      },
+      {
+        "name": "awards",
+        "description": "Awards won by this person or for this creative work.",
+        "type": "Text"
+      },
+      {
+        "name": "contentLocation",
+        "description": "The location of the content.",
+        "type": "Place"
+      },
+      {
+        "name": "contentRating",
+        "description": "Official rating of a piece of content&mdash;for example,'MPAA PG-13'.",
+        "type": "Text"
+      },
+      {
+        "name": "datePublished",
+        "description": "Date of first broadcast/publication.",
+        "type": "Date"
+      },
+      {
+        "name": "editor",
+        "description": "Editor for this content.",
+        "type": "Person"
+      },
+      {
+        "name": "encodings",
+        "description": "The media objects that encode this creative work",
+        "type": "MediaObject"
+      },
+      {
+        "name": "genre",
+        "description": "Genre of the creative work",
+        "type": "Text"
+      },
+      {
+        "name": "headline",
+        "description": "Headline of the article",
+        "type": "Text"
+      },
+      {
+        "name": "inLanguage",
+        "description": "The language of the content. please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard.</a>",
+        "type": "Text"
+      },
+      {
+        "name": "interactionCount",
+        "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+        "type": "Text"
+      },
+      {
+        "name": "isFamilyFriendly",
+        "description": "Indicates whether this content is family friendly.",
+        "type": "Boolean"
+      },
+      {
+        "name": "keywords",
+        "description": "The keywords/tags used to describe this content.",
+        "type": "Text"
+      },
+      {
+        "name": "offers",
+        "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+        "type": "Offer"
+      },
+      {
+        "name": "publisher",
+        "description": "The publisher of the creative work.",
+        "type": "Organization"
+      },
+      {
+        "name": "reviews",
+        "description": "Review of the item.",
+        "type": "Review"
+      },
+      {
+        "name": "video",
+        "description": "An embeded video object or URL associated with the content.",
+        "type": "VideoObject"
+      }
+    ],
+    "MediaObject": [
+      {
+        "name": "bitrate",
+        "description": "The bitrate of the media object.",
+        "type": "Text"
+      },
+      {
+        "name": "contentSize",
+        "description": "File size in (mega/kilo) bytes.",
+        "type": "Text"
+      },
+      {
+        "name": "contentURL",
+        "description": "Actual bytes of the media object, for example the image file or video file.",
+        "type": "Text"
+      },
+      {
+        "name": "duration",
+        "description": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" target=\"new\">ISO 8601 date format</a>.",
+        "type": "Duration"
+      },
+      {
+        "name": "embedURL",
+        "description": "A URL pointing to a player for a specific video. In general, this is the information in the <code>src</code> element of an <code>embed</code> tag and should not be the same as the content of the <code>loc</code> tag.",
+        "type": "Text"
+      },
+      {
+        "name": "encodesCreativeWork",
+        "description": "The creative work encoded by this media object",
+        "type": "CreativeWork"
+      },
+      {
+        "name": "encodingFormat",
+        "description": "mp3, mpeg4, etc.",
+        "type": "Text"
+      },
+      {
+        "name": "expires",
+        "description": "Date the content expires and is no longer useful or available. Useful for videos.",
+        "type": "Date"
+      },
+      {
+        "name": "height",
+        "description": "The height of the media object.",
+        "type": "Distance"
+      },
+      {
+        "name": "playerType",
+        "description": "Player type required&mdash;for example, Flash or Silverlight.",
+        "type": "Text"
+      },
+      {
+        "name": "regionsAllowed",
+        "description": "The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in <a href=\"http://en.wikipedia.org/wiki/ISO_3166\" target=\"new\">ISO 3166 format</a>.",
+        "type": "Place"
+      },
+      {
+        "name": "requiresSubscription",
+        "description": "Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>yes</code> or <code>no</code>.",
+        "type": "Boolean"
+      },
+      {
+        "name": "uploadDate",
+        "description": "Date when this media object was uploaded to this site.",
+        "type": "Date"
+      },
+      {
+        "name": "width",
+        "description": "The width of the media object.",
+        "type": "Distance"
+      }
+    ]
+  }
+}

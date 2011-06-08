@@ -1,0 +1,91 @@
+{
+  "type": "AggregateOffer",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "Offer": [
+      {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      {
+        "name": "availability",
+        "description": "The availability of this item&mdash;for example In stock, Out of stock, Pre-order, etc.",
+        "type": "ItemAvailability"
+      },
+      {
+        "name": "itemCondition",
+        "description": "The condition of the item for sale&mdash;for example New, Refurbished, Used, etc.",
+        "type": "OfferItemCondition"
+      },
+      {
+        "name": "itemOffered",
+        "description": "The item being sold.",
+        "type": "Product"
+      },
+      {
+        "name": "price",
+        "description": "The offer price of the product.",
+        "type": "Number or Text"
+      },
+      {
+        "name": "priceCurrency",
+        "description": "The currency (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217 format</a>) of the offer price.",
+        "type": "Text"
+      },
+      {
+        "name": "priceValidUntil",
+        "description": "The date after which the price is no longer available.",
+        "type": "Date"
+      },
+      {
+        "name": "reviews",
+        "description": "Review of the item.",
+        "type": "Review"
+      },
+      {
+        "name": "seller",
+        "description": "The seller of the product.",
+        "type": "Organization"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "highPrice",
+      "description": "The highest price of all offers available.",
+      "type": "Number or Text"
+    },
+    {
+      "name": "lowPrice",
+      "description": "The lowest price of all offers available.",
+      "type": "Number or Text"
+    },
+    {
+      "name": "offerCount",
+      "description": "The number of offers for the product.",
+      "type": "Integer"
+    }
+  ]
+}

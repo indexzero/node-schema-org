@@ -1,0 +1,81 @@
+{
+  "type": "PostalAddress",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ],
+    "ContactPoint": [
+      {
+        "name": "contactType",
+        "description": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
+        "type": "Text"
+      },
+      {
+        "name": "email",
+        "description": "Email address.",
+        "type": "Text"
+      },
+      {
+        "name": "faxNumber",
+        "description": "The fax number.",
+        "type": "Text"
+      },
+      {
+        "name": "telephone",
+        "description": "The telephone number.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "addressCountry",
+      "description": "The country. For example, USA. You can also provide the two-letter <a href=\"http://en.wikipedia.org/wiki/ISO_3166-1\" target=\"new\">ISO 3166-1 alpha-2 country code</a>.",
+      "type": "Country"
+    },
+    {
+      "name": "addressLocality",
+      "description": "The locality. For example, Mountain View.",
+      "type": "Text"
+    },
+    {
+      "name": "addressRegion",
+      "description": "The region. For example, CA.",
+      "type": "Text"
+    },
+    {
+      "name": "postOfficeBoxNumber",
+      "description": "The post offce box number for PO box addresses.",
+      "type": "Text"
+    },
+    {
+      "name": "postalCode",
+      "description": "The postal code. For example, 94043.",
+      "type": "Text"
+    },
+    {
+      "name": "streetAddress",
+      "description": "The street address. For example, 1600 Amphitheatre Pkwy.",
+      "type": "Text"
+    }
+  ]
+}

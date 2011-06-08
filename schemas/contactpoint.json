@@ -1,0 +1,49 @@
+{
+  "type": "ContactPoint",
+  "bases": {
+    "Thing": [
+      {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "Text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "contactType",
+      "description": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
+      "type": "Text"
+    },
+    {
+      "name": "email",
+      "description": "Email address.",
+      "type": "Text"
+    },
+    {
+      "name": "faxNumber",
+      "description": "The fax number.",
+      "type": "Text"
+    },
+    {
+      "name": "telephone",
+      "description": "The telephone number.",
+      "type": "Text"
+    }
+  ]
+}
