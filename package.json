@@ -22,7 +22,10 @@
   },
   "scripts": { "test": "vows test/*-test.js --spec" },
   "bin": {
-    "read-schema-org": "./bin/read-schema-org"
+    "read-schema-org": "./bin/read-schema-org",
+    "parse-schema": "./bin/parse-schema",
+    "list-schema": "./bin/list-schemas"
   },
+  "main": "./lib",
   "engines": { "node": ">= 0.4.0" }
 }
