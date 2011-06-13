@@ -34,12 +34,12 @@
       },
       {
         "name": "duration",
-        "description": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" target=\"new\">ISO 8601 date format</a>.",
+        "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
         "type": "Duration"
       },
       {
         "name": "endDate",
-        "description": "The end date and time of the event (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" target=\"new\">ISO 8601 date format</a>).",
+        "description": "The end date and time of the event (in ISO 8601 date format).",
         "type": "Date"
       },
       {
@@ -52,12 +52,12 @@
       },
       {
         "name": "offers",
-        "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+        "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
         "type": "Offer"
       },
       {
         "name": "performers",
-        "description": "The main performer or performers of the event&mdash;for example, a presenter, musician, or actor.",
+        "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
         "type": [
           "Person",
           "Organization"
@@ -65,7 +65,7 @@
       },
       {
         "name": "startDate",
-        "description": "The start date and time of the event (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\" target=\"new\">ISO 8601 date format</a>).",
+        "description": "The start date and time of the event (in ISO 8601 date format).",
         "type": "Date"
       },
       {

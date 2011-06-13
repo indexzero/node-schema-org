@@ -71,7 +71,7 @@
       },
       {
         "name": "interactionCount",
-        "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+        "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
         "type": "Text"
       },
       {
@@ -110,12 +110,12 @@
     },
     {
       "name": "musicGroupMember",
-      "description": "A member of the music group&mdash;for example, John, Paul, George, or Ringo.",
+      "description": "A member of the music group—for example, John, Paul, George, or Ringo.",
       "type": "Person"
     },
     {
       "name": "tracks",
-      "description": "A music recording (track)&mdash;usually a single song.",
+      "description": "A music recording (track)—usually a single song.",
       "type": "MusicRecording"
     }
   ]

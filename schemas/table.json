@@ -59,7 +59,7 @@
       },
       {
         "name": "contentRating",
-        "description": "Official rating of a piece of content&mdash;for example,'MPAA PG-13'.",
+        "description": "Official rating of a piece of content—for example,'MPAA PG-13'.",
         "type": "Text"
       },
       {
@@ -89,12 +89,12 @@
       },
       {
         "name": "inLanguage",
-        "description": "The language of the content. please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard.</a>",
+        "description": "The language of the content. please use one of the language codes from the IETF BCP 47 standard.",
         "type": "Text"
       },
       {
         "name": "interactionCount",
-        "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+        "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
         "type": "Text"
       },
       {
@@ -109,7 +109,7 @@
       },
       {
         "name": "offers",
-        "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+        "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
         "type": "Offer"
       },
       {

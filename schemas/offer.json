@@ -32,12 +32,12 @@
     },
     {
       "name": "availability",
-      "description": "The availability of this item&mdash;for example In stock, Out of stock, Pre-order, etc.",
+      "description": "The availability of this item—for example In stock, Out of stock, Pre-order, etc.",
       "type": "ItemAvailability"
     },
     {
       "name": "itemCondition",
-      "description": "The condition of the item for sale&mdash;for example New, Refurbished, Used, etc.",
+      "description": "The condition of the item for sale—for example New, Refurbished, Used, etc.",
       "type": "OfferItemCondition"
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "name": "priceCurrency",
-      "description": "The currency (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217 format</a>) of the offer price.",
+      "description": "The currency (in 3-letter ISO 4217 format) of the offer price.",
       "type": "Text"
     },
     {

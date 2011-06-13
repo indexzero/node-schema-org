@@ -47,12 +47,12 @@
     },
     {
       "name": "offers",
-      "description": "An offer to sell this item&mdash;for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+      "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
       "type": "Offer"
     },
     {
       "name": "productID",
-      "description": "The product identifier, such as ISBN. For example: <code>&lt;meta itemprop='productID' content='isbn:123-456-789'/&gt;</code>.",
+      "description": "The product identifier, such as ISBN. For example: .",
       "type": "Text"
     },
     {

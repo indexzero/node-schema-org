@@ -32,12 +32,12 @@
     },
     {
       "name": "latitude",
-      "description": "The latitude of a location. For example <code>37.42242</code>.",
+      "description": "The latitude of a location. For example 37.42242.",
       "type": "Number or Text"
     },
     {
       "name": "longitude",
-      "description": "The longitude of a location. For example <code>-122.08585</code>.",
+      "description": "The longitude of a location. For example -122.08585.",
       "type": "Number or Text"
     }
   ]

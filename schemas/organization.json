@@ -72,7 +72,7 @@
     },
     {
       "name": "interactionCount",
-      "description": "A count of a specific user interactions with this item&mdash;for example, <code>20 UserLikes</code>, <code>5 UserComments</code>, or <code>300 UserDownloads</code>. The user interaction type should be one of the sub types of <a href=\"UserInteraction\">UserInteraction</a>.",
+      "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
       "type": "Text"
     },
     {
