@@ -5,6 +5,7 @@ var fs = require('fs'),
     colors = require('colors'),
     request = require('request'),
     jsdom = require('jsdom'),
+    validator = require('validator'),
     winston = require('winston').cli();
 
 var type = argv.type,
@@ -47,12 +48,17 @@ request({ uri: url }, function (error, response, body) {
             
       jbody.find('tr').each(function (i, tr) {
         var jtr = $(tr), 
-            types = [], 
+            types = [],
+            desc =  $(jtr.find('td.prop-desc')[0]).html(),
             prop;
-            
+        
+        if (desc) {
+          desc = validator.entities.decode(desc).replace(/<.*?>/g, '');
+        }
+        
         prop = {
           name: $(jtr.find('th code')[0]).html(),
-          description: $(jtr.find('td.prop-desc')[0]).html()
+          description: desc
         };
         
         var ptype = $(jtr.find('td.prop-ect')[0]),

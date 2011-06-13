@@ -15,7 +15,8 @@
     "optimist": "0.2.x",
     "pkginfo": "0.2.x",
     "request": "1.9.x",
-    "winston": "0.3.x"
+    "winston": "0.3.x",
+    "validator": "0.2.x"
   },
   "scripts": { "test": "vows test/*-test.js --spec" },
   "bin": {
