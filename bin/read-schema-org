@@ -4,14 +4,55 @@ var fs = require('fs'),
     exec = require('child_process').exec,
     path = require('path'),
     spawn = require('child_process').spawn,
+    async = require('async'),
+    optimist = require('optimist'),
     neuron = require('neuron'),
-    winston = require('winston').cli();
+    schemaOrg = require('../lib');
+  
+//
+// Setup the optimist CLI arguments
+//    
+var argv = optimist.options({
+  force: {
+    description: 'Value indicating if we should force the remote list parse',
+    default: true
+  },
+  schemaDir: {
+    description: 'Directory to place schemas in'
+  },
+  url: {
+    description: 'Remote URL to parse schemas from'
+  },
+  help: {
+    alias: 'h',
+    description: 'Youre staring at it'
+  }
+}).argv;
 
-var schemaDir = path.join(__dirname, '..', 'schemas'),
-    allSchemas = path.join(schemaDir, 'schema-list.json');
+//
+// If we should print the help for this 
+// script then do so.
+//
+if (argv.h || argv.help) {
+  console.log([
+    'read-schema-org: Read and parse the schemas at schema.org using the specified options',
+    ''
+  ].join('\n'));
+  console.log(optimist.help());
+  return;
+}
+
+//
+// Setup `node-schema-org` to use the winston.cli() logger.
+//
+schemaOrg.logger.cli();
+
+var schemaDir    = argv.schemaDir || path.join(__dirname, '..', 'schemas'),
+    allSchemas   = path.join(schemaDir, 'schema-list.json'),
+    downloadList = false;
 
 function streamChild (params, callback) {
-  winston.info('Spawning: node ' + params.join(' ').yellow);
+  schemaOrg.logger.info('Spawning: node ' + params.join(' ').yellow);
   
   var child = spawn('node', params);
   
@@ -24,54 +65,114 @@ function streamChild (params, callback) {
   });
   
   child.on('exit', function () {
-    winston.info('node ' + params.join(' ').yellow + ' has exited.');
+    schemaOrg.logger.info('node ' + params.join(' ').yellow + ' has exited.');
     callback();
   });
 }
 
-winston.warn('Removing all schemas in ' + schemaDir.magenta);
-exec('rm -rf ' + schemaDir, function () {
-  streamChild([path.join(__dirname, '..', 'list-schemas.js')], function () {
-    fs.readFile(allSchemas, function (err, data) {
-      if (err) {
-        return winston.error('Error reading schemas: ' + err.message);
-      }
-
-      var schemas = JSON.parse(data.toString()).schemas,
-          manager = new neuron.JobManager({ concurrency: 75 }),
-          completed = 0;
-
-      manager.addJob('readSchema', {
-        work: function (schema) {
-          var that = this,
-              readOptions;
-              
-          readOptions = [
-            path.join(__dirname, '..', 'read-schema.js'), 
-            '--type', 
-            schema
-          ];
-            
-          streamChild(readOptions, function () {
-            that.finished = true;
-          });
-        }
-      });
-
-      manager.on('finish', function (job, worker) {
-        completed += 1;
-
-        if (completed === schemas.length) {
-          winston.info('');
-          winston.info('Done parsing all schemas from ' + 'schema.org'.magenta);
-          winston.info('They are located in: ' + schemaDir.magenta);
-          winston.info('');
-        }
-      });
-
-      schemas.forEach(function (schema) {
-        manager.enqueue('readSchema', schema);
-      });
-    });
+function readLocal (done) {
+  fs.readFile(allSchemas, function (err, data) {
+    if (err) {
+      schemaOrg.logger.warn('Error reading schema-list.json');
+      schemaOrg.logger.warn(err.message);
+      schemaOrg.logger.warn('All schemas will be downloaded remotely.');
+      return done(err);
+    }
+    
+    try {
+      data = JSON.parse(data.toString());
+    }
+    catch (ex) {
+      return done(ex);
+    }
+    
+    done(null, data.schemas);
   });
+}
+
+function removeLocalSchemas (done) {
+  winston.warn('Removing all schemas in ' + schemaDir.magenta);
+  fs.readdir(schemaDir, function (err, files) {
+    if (err) {
+      return done(err);
+    }
+    
+    files = files.filter(function (file) {
+      return file !== 'schema-list.json'
+    });
+    
+    function removeFile (file, next) {
+      schemaOrg.logger.info('Removing old file: ' + file);
+      fs.unlink(path.join(schemaDir, file), next);
+    }
+    
+    async.forEach(files, removeFile, done);
+  });
+}
+
+function parseAllSchemas (schemas) {
+  var manager = new neuron.JobManager({ concurrency: 75 }),
+      completed = 0;
+
+  manager.addJob('readSchema', {
+    work: function (schema) {
+      var that = this,
+          readOptions;
+          
+      readOptions = [
+        path.join(__dirname, 'parse-schema'), 
+        '--type', 
+        schema,
+        '--verbose',
+        false
+      ];
+        
+      streamChild(readOptions, function () {
+        that.finished = true;
+      });
+    }
+  });
+
+  manager.on('finish', function (job, worker) {
+    completed += 1;
+
+    if (completed === schemas.length) {
+      schemaOrg.logger.info('');
+      schemaOrg.logger.info('Done parsing all schemas from ' + 'schema.org'.magenta);
+      schemaOrg.logger.info('They are located in: ' + schemaDir.magenta);
+      schemaOrg.logger.info('');
+    }
+  });
+
+  schemas.forEach(function (schema) {
+    manager.enqueue('readSchema', schema);
+  });
+}
+
+
+//
+// Attempt to read the local schemas
+//
+readLocal(function (err, schemas) {
+  if (err) {
+    downloadList = true;
+  }
+  
+  removeLocalSchemas(function (err) {
+    if (err) {
+      //
+      // Ignore errors.
+      //
+    }
+    
+    if (downloadList) {
+      return streamChild([path.join(__dirname, 'list-schemas')], function () {
+        readLocal(function (err, schemas) {
+          parseAllSchemas(schemas);
+        });
+      });
+    }
+    
+    parseAllSchemas(schemas);
+  })
 });

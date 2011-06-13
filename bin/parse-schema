@@ -1,0 +1,90 @@
+#!/usr/bin/env node
+
+var cliff = require('cliff'),
+    optimist = require('optimist'),
+    schemaOrg = require('../lib');
+
+//
+// Setup the optimist CLI arguments
+//    
+var argv = optimist.options({
+  force: {
+    description: 'Value indicating if we should force the remote parse',
+    default: true
+  },
+  filename: {
+    description: 'Filename to write schema list to'
+  },
+  remote: {
+    description: 'Value indicating if we should parse the remote list',
+    default: true
+  },
+  schemaDir: {
+    description: 'Directory to place schemas in'
+  },
+  type: {
+    description: 'Type of the schema to parse',
+    required: true
+  },
+  verbose: {
+    description: 'Value indicating if verbose logging should be used',
+    default: true
+  },
+  help: {
+    alias: 'h',
+    description: 'Youre staring at it'
+  }
+}).argv;
+
+//
+// If we should print the help for this 
+// script then do so.
+//
+if (argv.h || argv.help) {
+  console.log([
+    'parse-schema: Parses the schema at schema.org using the specified options',
+    ''
+  ].join('\n'));
+  console.log(optimist.help());
+  return;
+}
+
+//
+// Setup `node-schema-org` to use the winston.cli() logger.
+//
+schemaOrg.logger.cli();
+
+function displaySchema (err, schema) {
+  if (err) {
+    schemaOrg.logger.error('Error parsing schema: ' + argv.type.magenta);
+    schemaOrg.logger.error(err.message);
+    return;
+  }
+  
+  if (argv.verbose) {
+    schemaOrg.logger.info('Viewing schema reterived: ')
+    cliff.putObject(schema, 2);
+  }
+}
+
+//
+// List the remote schema and exit.
+//
+var options = {
+  filename: argv.filename,
+  force: argv.force,
+  schemaDir: argv.schemaDir,
+  type: argv.type
+};
+
+//
+// Parse the boolean arguments manually until optimist@0.2.4
+// is released.
+//
+argv.force = argv.force === true;
+argv.remote = argv.remote === true;
+argv.verbose = argv.verbose === true;
+
+return argv.remote 
+  ? schemaOrg.read.remote(options, displaySchema)
+  : schemaOrg.read.local(options, displaySchema);

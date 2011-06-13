@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+
+var optimist = require('optimist'),
+    schemaOrg = require('../lib');
+
+//
+// Setup the optimist CLI arguments
+//    
+var argv = optimist.options({
+  force: {
+    description: 'Value indicating if we should force the remote parse',
+    default: true
+  },
+  filename: {
+    description: 'Filename to write schema list to'
+  },
+  remote: {
+    description: 'Value indicating if we should parse the remote list',
+    default: true
+  },
+  schemaDir: {
+    description: 'Directory to place schemas in'
+  },
+  url: {
+    description: 'Remote URL to parse schemas from'
+  },
+  help: {
+    alias: 'h',
+    description: 'Youre staring at it'
+  }
+}).argv;
+
+//
+// If we should print the help for this 
+// script then do so.
+//
+if (argv.h || argv.help) {
+  console.log([
+    'list-schemas: Lists the schemas at schema.org using the specified options',
+    ''
+  ].join('\n'));
+  console.log(optimist.help());
+  return;
+}
+
+//
+// Setup `node-schema-org` to use the winston.cli() logger.
+//
+schemaOrg.logger.cli();
+
+function displaySchemas (err, schemas) {
+  if (err) {
+    schemaOrg.logger.error('Error listening schemas');
+    schemaOrg.logger.error(err.message);
+    return;
+  }
+  
+  schemaOrg.logger.info('Listing schemas reterived: ')
+
+  schemas.forEach(function (name) {
+    schemaOrg.logger.data(name);
+  });
+}
+
+//
+// List the remote schema and exit.
+//
+var options = {
+  filename: argv.filename,
+  force: argv.force,
+  schemaDir: argv.schemaDir,
+  url: argv.url
+};
+
+//
+// Parse the boolean arguments manually until optimist@0.2.4
+// is released.
+//
+argv.force = argv.force === true;
+argv.remote = argv.remote === true;
+
+return argv.remote 
+  ? schemaOrg.list.remote(options, displaySchemas)
+  : schemaOrg.list.local(options, displaySchemas);
