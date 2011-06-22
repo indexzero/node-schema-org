@@ -208,9 +208,24 @@
       "type": "Text"
     },
     {
+      "name": "productionCompany",
+      "description": "The production company or studio that made the movie, TV series, season, or episode, or video.",
+      "type": "Organization"
+    },
+    {
       "name": "thumbnail",
       "description": "Thumbnail image for an image or video.",
       "type": "ImageObject"
+    },
+    {
+      "name": "videoFrameSize",
+      "description": "The frame size of the video.",
+      "type": "Text"
+    },
+    {
+      "name": "videoQuality",
+      "description": "The quality of the video.",
+      "type": "Text"
     }
   ]
 }

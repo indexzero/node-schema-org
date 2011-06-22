@@ -172,6 +172,11 @@
       "name": "productionCompany",
       "description": "The production company or studio that made the movie, TV series, season, or episode, or video.",
       "type": "Organization"
+    },
+    {
+      "name": "trailer",
+      "description": "The trailer of the movie or TV series, season, or episode.",
+      "type": "VideoObject"
     }
   ]
 }
