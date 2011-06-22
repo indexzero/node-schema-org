@@ -10,6 +10,7 @@ var cliff = require('cliff'),
 var argv = optimist.options({
   force: {
     description: 'Value indicating if we should force the remote parse',
+    boolean: true,
     default: true
   },
   filename: {
@@ -17,6 +18,7 @@ var argv = optimist.options({
   },
   remote: {
     description: 'Value indicating if we should parse the remote list',
+    boolean: true,
     default: true
   },
   schemaDir: {
@@ -28,6 +30,7 @@ var argv = optimist.options({
   },
   verbose: {
     description: 'Value indicating if verbose logging should be used',
+    boolean: true,
     default: true
   },
   help: {
@@ -76,14 +79,6 @@ var options = {
   schemaDir: argv.schemaDir,
   type: argv.type
 };
-
-//
-// Parse the boolean arguments manually until optimist@0.2.4
-// is released.
-//
-argv.force = argv.force === true;
-argv.remote = argv.remote === true;
-argv.verbose = argv.verbose === true;
 
 return argv.remote 
   ? schemaOrg.read.remote(options, displaySchema)

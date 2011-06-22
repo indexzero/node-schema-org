@@ -9,6 +9,7 @@ var optimist = require('optimist'),
 var argv = optimist.options({
   force: {
     description: 'Value indicating if we should force the remote parse',
+    boolean: true,
     default: true
   },
   filename: {
@@ -16,6 +17,7 @@ var argv = optimist.options({
   },
   remote: {
     description: 'Value indicating if we should parse the remote list',
+    boolean: true,
     default: true
   },
   schemaDir: {
@@ -71,13 +73,6 @@ var options = {
   schemaDir: argv.schemaDir,
   url: argv.url
 };
-
-//
-// Parse the boolean arguments manually until optimist@0.2.4
-// is released.
-//
-argv.force = argv.force === true;
-argv.remote = argv.remote === true;
 
 return argv.remote 
   ? schemaOrg.list.remote(options, displaySchemas)

@@ -15,6 +15,7 @@ var fs = require('fs'),
 var argv = optimist.options({
   force: {
     description: 'Value indicating if we should force the remote list parse',
+    boolean: true,
     default: true
   },
   schemaDir: {
@@ -123,8 +124,7 @@ function parseAllSchemas (schemas) {
         path.join(__dirname, 'parse-schema'), 
         '--type', 
         schema,
-        '--verbose',
-        false
+        '--no-verbose'
       ];
         
       streamChild(readOptions, function () {
