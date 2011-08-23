@@ -20,7 +20,7 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
+        "type": "URL"
       }
     ],
     "Organization": [
@@ -51,7 +51,7 @@
       },
       {
         "name": "events",
-        "description": "The events held at this place or organization.",
+        "description": "Upcoming or past events associated with this place or organization.",
         "type": "Event"
       },
       {
@@ -107,11 +107,6 @@
       "name": "albums",
       "description": "A collection of music albums.",
       "type": "MusicAlbum"
-    },
-    {
-      "name": "musicGroupMember",
-      "description": "A member of the music group—for example, John, Paul, George, or Ringo.",
-      "type": "Person"
     },
     {
       "name": "tracks",

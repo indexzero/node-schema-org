@@ -20,7 +20,7 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
+        "type": "URL"
       }
     ]
   },
@@ -42,7 +42,7 @@
     },
     {
       "name": "events",
-      "description": "The events held at this place or organization.",
+      "description": "Upcoming or past events associated with this place or organization.",
       "type": "Event"
     },
     {
@@ -63,7 +63,7 @@
     {
       "name": "maps",
       "description": "A URL to a map of the place.",
-      "type": "Text"
+      "type": "URL"
     },
     {
       "name": "photos",

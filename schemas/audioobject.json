@@ -20,7 +20,7 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
+        "type": "URL"
       }
     ],
     "CreativeWork": [
@@ -36,7 +36,7 @@
       },
       {
         "name": "audio",
-        "description": "An embeded audio object or URL associated with the content.",
+        "description": "An embedded audio object.",
         "type": "AudioObject"
       },
       {
@@ -124,7 +124,7 @@
       },
       {
         "name": "video",
-        "description": "An embeded video object or URL associated with the content.",
+        "description": "An embedded video object.",
         "type": "VideoObject"
       }
     ],
@@ -142,7 +142,7 @@
       {
         "name": "contentURL",
         "description": "Actual bytes of the media object, for example the image file or video file.",
-        "type": "Text"
+        "type": "URL"
       },
       {
         "name": "duration",
@@ -152,7 +152,7 @@
       {
         "name": "embedURL",
         "description": "A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag.",
-        "type": "Text"
+        "type": "URL"
       },
       {
         "name": "encodesCreativeWork",

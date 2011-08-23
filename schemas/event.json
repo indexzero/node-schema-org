@@ -1,5 +1,5 @@
 {
-  "type": "event",
+  "type": "Event",
   "bases": {
     "Thing": [
       {
@@ -20,64 +20,64 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
-      }
-    ],
-    "Event": [
-      {
-        "name": "attendees",
-        "description": "A person attending the event.",
-        "type": [
-          "Person",
-          "Organization"
-        ]
-      },
-      {
-        "name": "duration",
-        "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
-        "type": "Duration"
-      },
-      {
-        "name": "endDate",
-        "description": "The end date and time of the event (in ISO 8601 date format).",
-        "type": "Date"
-      },
-      {
-        "name": "location",
-        "description": "The location of the event or organization.",
-        "type": [
-          "Place",
-          "PostalAddress"
-        ]
-      },
-      {
-        "name": "offers",
-        "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
-        "type": "Offer"
-      },
-      {
-        "name": "performers",
-        "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
-        "type": [
-          "Person",
-          "Organization"
-        ]
-      },
-      {
-        "name": "startDate",
-        "description": "The start date and time of the event (in ISO 8601 date format).",
-        "type": "Date"
-      },
-      {
-        "name": "subEvents",
-        "description": "Events that are a part of this event. For example, a conference event includes many presentations, each are subEvents of the conference.",
-        "type": "Event"
-      },
-      {
-        "name": "superEvent",
-        "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
-        "type": "Event"
+        "type": "URL"
       }
     ]
-  }
+  },
+  "properties": [
+    {
+      "name": "attendees",
+      "description": "A person attending the event.",
+      "type": [
+        "Person",
+        "Organization"
+      ]
+    },
+    {
+      "name": "duration",
+      "description": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "type": "Duration"
+    },
+    {
+      "name": "endDate",
+      "description": "The end date and time of the event (in ISO 8601 date format).",
+      "type": "Date"
+    },
+    {
+      "name": "location",
+      "description": "The location of the event or organization.",
+      "type": [
+        "Place",
+        "PostalAddress"
+      ]
+    },
+    {
+      "name": "offers",
+      "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+      "type": "Offer"
+    },
+    {
+      "name": "performers",
+      "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
+      "type": [
+        "Person",
+        "Organization"
+      ]
+    },
+    {
+      "name": "startDate",
+      "description": "The start date and time of the event (in ISO 8601 date format).",
+      "type": "Date"
+    },
+    {
+      "name": "subEvents",
+      "description": "Events that are a part of this event. For example, a conference event includes many presentations, each are subEvents of the conference.",
+      "type": "Event"
+    },
+    {
+      "name": "superEvent",
+      "description": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+      "type": "Event"
+    }
+  ]
 }

@@ -20,7 +20,7 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
+        "type": "URL"
       }
     ]
   }

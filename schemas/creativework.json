@@ -20,7 +20,7 @@
       {
         "name": "url",
         "description": "URL of the item.",
-        "type": "Text"
+        "type": "URL"
       }
     ]
   },
@@ -37,7 +37,7 @@
     },
     {
       "name": "audio",
-      "description": "An embeded audio object or URL associated with the content.",
+      "description": "An embedded audio object.",
       "type": "AudioObject"
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "name": "video",
-      "description": "An embeded video object or URL associated with the content.",
+      "description": "An embedded video object.",
       "type": "VideoObject"
     }
   ]
