@@ -1,6 +1,6 @@
 {
   "name": "schema-org",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A node.js library that retrieves, parses and provides all schemas from schema.org",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "repository": {
@@ -16,7 +16,7 @@
     "neuron": "0.4.x",
     "optimist": "0.2.x",
     "pkginfo": "0.2.x",
-    "request": "1.9.x",
+    "request": "2.1.x",
     "winston": "0.3.x",
     "validator": "0.2.x"
   },
