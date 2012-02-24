@@ -24,6 +24,11 @@ var argv = optimist.options({
   url: {
     description: 'Remote URL to parse schemas from'
   },
+  concurrency: {
+    alias: 'c',
+    description: 'concurrency value passed to neuron',
+    default: 4
+  },
   help: {
     alias: 'h',
     description: 'Youre staring at it'
@@ -112,7 +117,12 @@ function removeLocalSchemas (done) {
 }
 
 function parseAllSchemas (schemas) {
-  var manager = new neuron.JobManager({ concurrency: 75 }),
+
+  if (argv._.length) {
+    schemas = schemas.filter(function (a) { return argv._.indexOf(a) !== -1; });
+  }
+  
+  var manager = new neuron.JobManager({ concurrency: argv.concurrency }),
       completed = 0;
 
   manager.addJob('readSchema', {
