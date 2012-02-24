@@ -1,3 +1,4 @@
 {
-  "type": "Integer"
+  "type": "Integer",
+  "version": "Schema Draft Version 0.9"
 }

@@ -1,5 +1,6 @@
 {
   "type": "Thing",
+  "version": "Schema Draft Version 0.9",
   "properties": [
     {
       "name": "description",

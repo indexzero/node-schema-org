@@ -1,5 +1,6 @@
 {
   "type": "Place",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -53,7 +54,10 @@
     {
       "name": "geo",
       "description": "The geo coordinates of the place.",
-      "type": "GeoCoordinates"
+      "type": [
+        "GeoCoordinates",
+        "GeoShape"
+      ]
     },
     {
       "name": "interactionCount",

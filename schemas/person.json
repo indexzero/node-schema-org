@@ -1,5 +1,6 @@
 {
   "type": "Person",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -25,6 +26,11 @@
     ]
   },
   "properties": [
+    {
+      "name": "additionalName",
+      "description": "An additional name for a Person, can be used for a middle name.",
+      "type": "Text"
+    },
     {
       "name": "address",
       "description": "Physical address of the item.",
@@ -76,6 +82,11 @@
       "type": "Text"
     },
     {
+      "name": "familyName",
+      "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the Name property.",
+      "type": "Text"
+    },
+    {
       "name": "faxNumber",
       "description": "The fax number.",
       "type": "Text"
@@ -91,12 +102,27 @@
       "type": "Text"
     },
     {
+      "name": "givenName",
+      "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the Name property.",
+      "type": "Text"
+    },
+    {
       "name": "homeLocation",
       "description": "A contact location for a person's residence.",
       "type": [
         "Place",
         "ContactPoint"
       ]
+    },
+    {
+      "name": "honorificPrefix",
+      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "type": "Text"
+    },
+    {
+      "name": "honorificSuffix",
+      "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+      "type": "Text"
     },
     {
       "name": "interactionCount",
