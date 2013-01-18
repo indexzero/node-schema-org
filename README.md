@@ -150,5 +150,6 @@ Here is a sample of the output (all of the pre-parsed schemas are available [her
 ```
 
 #### Author: [Charlie Robbins][0]
+#### License: MIT
 
 [0]: http://blog.nodejitsu.com
