@@ -1,7 +1,13 @@
 {
   "type": "AggregateOffer",
+  "version": "Schema Draft Version 0.99",
   "bases": {
     "Thing": [
+      {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
       {
         "name": "description",
         "description": "A short description of the item.",
@@ -25,6 +31,21 @@
     ],
     "Offer": [
       {
+        "name": "acceptedPaymentMethod",
+        "description": "The payment method(s) accepted by seller for this offer.",
+        "type": "PaymentMethod"
+      },
+      {
+        "name": "addOn",
+        "description": "An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).",
+        "type": "Offer"
+      },
+      {
+        "name": "advanceBookingRequirement",
+        "description": "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
+        "type": "QuantitativeValue"
+      },
+      {
         "name": "aggregateRating",
         "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
         "type": "AggregateRating"
@@ -35,8 +56,96 @@
         "type": "ItemAvailability"
       },
       {
+        "name": "availabilityEnds",
+        "description": "The end of the availability of the product or service included in the offer.",
+        "type": "DateTime"
+      },
+      {
+        "name": "availabilityStarts",
+        "description": "The beginning of the availability of the product or service included in the offer.",
+        "type": "DateTime"
+      },
+      {
+        "name": "availableAtOrFrom",
+        "description": "The place(s) from which the offer can be obtained (e.g. store locations).",
+        "type": "Place"
+      },
+      {
+        "name": "availableDeliveryMethod",
+        "description": "The delivery method(s) available for this offer.",
+        "type": "DeliveryMethod"
+      },
+      {
+        "name": "businessFunction",
+        "description": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+        "type": "BusinessFunction"
+      },
+      {
+        "name": "category",
+        "description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+        "type": [
+          "PhysicalActivityCategory",
+          "Thing"
+        ]
+      },
+      {
+        "name": "deliveryLeadTime",
+        "description": "The typical delay between the receipt of the order and the goods leaving the warehouse.",
+        "type": "QuantitativeValue"
+      },
+      {
+        "name": "eligibleCustomerType",
+        "description": "The type(s) of customers for which the given offer is valid.",
+        "type": "BusinessEntityType"
+      },
+      {
+        "name": "eligibleDuration",
+        "description": "The duration for which the given offer is valid.",
+        "type": "QuantitativeValue"
+      },
+      {
+        "name": "eligibleQuantity",
+        "description": "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
+        "type": "QuantitativeValue"
+      },
+      {
+        "name": "eligibleRegion",
+        "description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.",
+        "type": "GeoShape"
+      },
+      {
+        "name": "eligibleTransactionVolume",
+        "description": "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
+        "type": "PriceSpecification"
+      },
+      {
+        "name": "gtin13",
+        "description": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero.",
+        "type": "Text"
+      },
+      {
+        "name": "gtin14",
+        "description": "The GTIN-14 code of the product, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      {
+        "name": "gtin8",
+        "description": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN.",
+        "type": "Text"
+      },
+      {
+        "name": "includesObject",
+        "description": "This links to a node or nodes indicating the exact quantity of the products included in the offer.",
+        "type": "TypeAndQuantityNode"
+      },
+      {
+        "name": "inventoryLevel",
+        "description": "The current approximate inventory level for the item or items.",
+        "type": "QuantitativeValue"
+      },
+      {
         "name": "itemCondition",
-        "description": "The condition of the item for sale—for example New, Refurbished, Used, etc.",
+        "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
         "type": "OfferItemCondition"
       },
       {
@@ -45,14 +154,24 @@
         "type": "Product"
       },
       {
+        "name": "mpn",
+        "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      {
         "name": "price",
-        "description": "The offer price of the product.",
-        "type": "Number or Text"
+        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+        "type": "NumberorText"
       },
       {
         "name": "priceCurrency",
-        "description": "The currency (in 3-letter ISO 4217 format) of the offer price.",
+        "description": "The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.",
         "type": "Text"
+      },
+      {
+        "name": "priceSpecification",
+        "description": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+        "type": "PriceSpecification"
       },
       {
         "name": "priceValidUntil",
@@ -60,14 +179,47 @@
         "type": "Date"
       },
       {
+        "name": "review",
+        "description": "A review of the item.",
+        "type": "Review"
+      },
+      {
         "name": "reviews",
-        "description": "Review of the item.",
+        "description": "Review of the item (legacy spelling; see singular form, review).",
         "type": "Review"
       },
       {
         "name": "seller",
-        "description": "The seller of the product.",
-        "type": "Organization"
+        "description": "The seller.",
+        "type": [
+          "Organization",
+          "Person"
+        ]
+      },
+      {
+        "name": "serialNumber",
+        "description": "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.",
+        "type": "Text"
+      },
+      {
+        "name": "sku",
+        "description": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      {
+        "name": "validFrom",
+        "description": "The beginning of the validity of offer, price specification, or opening hours data.",
+        "type": "DateTime"
+      },
+      {
+        "name": "validThrough",
+        "description": "The end of the validity of offer, price specification, or opening hours data.",
+        "type": "DateTime"
+      },
+      {
+        "name": "warranty",
+        "description": "The warranty promise(s) included in the offer.",
+        "type": "WarrantyPromise"
       }
     ]
   },
@@ -75,12 +227,12 @@
     {
       "name": "highPrice",
       "description": "The highest price of all offers available.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "lowPrice",
       "description": "The lowest price of all offers available.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "offerCount",

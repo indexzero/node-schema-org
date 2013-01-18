@@ -1,7 +1,13 @@
 {
   "type": "MusicEvent",
+  "version": "Schema Draft Version 0.99",
   "bases": {
     "Thing": [
+      {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
       {
         "name": "description",
         "description": "A short description of the item.",
@@ -25,11 +31,19 @@
     ],
     "Event": [
       {
-        "name": "attendees",
-        "description": "A person attending the event.",
+        "name": "attendee",
+        "description": "A person or organization attending the event.",
         "type": [
-          "Person",
-          "Organization"
+          "Organization",
+          "Person"
+        ]
+      },
+      {
+        "name": "attendees",
+        "description": "A person attending the event (legacy spelling; see singular form, attendee).",
+        "type": [
+          "Organization",
+          "Person"
         ]
       },
       {
@@ -56,11 +70,19 @@
         "type": "Offer"
       },
       {
-        "name": "performers",
-        "description": "The main performer or performers of the event—for example, a presenter, musician, or actor.",
+        "name": "performer",
+        "description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
         "type": [
-          "Person",
-          "Organization"
+          "Organization",
+          "Person"
+        ]
+      },
+      {
+        "name": "performers",
+        "description": "The main performer or performers of the event—for example, a presenter, musician, or actor (legacy spelling; see singular form, performer).",
+        "type": [
+          "Organization",
+          "Person"
         ]
       },
       {
@@ -69,8 +91,13 @@
         "type": "Date"
       },
       {
+        "name": "subEvent",
+        "description": "An Event that is part of this event. For example, a conference event includes many presentations, each are a subEvent of the conference.",
+        "type": "Event"
+      },
+      {
         "name": "subEvents",
-        "description": "Events that are a part of this event. For example, a conference event includes many presentations, each are subEvents of the conference.",
+        "description": "Events that are a part of this event. For example, a conference event includes many presentations, each are subEvents of the conference (legacy spelling; see singular form, subEvent).",
         "type": "Event"
       },
       {

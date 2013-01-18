@@ -1,7 +1,13 @@
 {
   "type": "GovernmentBuilding",
+  "version": "Schema Draft Version 0.99",
   "bases": {
     "Thing": [
+      {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
       {
         "name": "description",
         "description": "A short description of the item.",
@@ -40,8 +46,13 @@
         "type": "Place"
       },
       {
+        "name": "event",
+        "description": "Upcoming or past event associated with this place or organization.",
+        "type": "Event"
+      },
+      {
         "name": "events",
-        "description": "Upcoming or past events associated with this place or organization.",
+        "description": "Upcoming or past events associated with this place or organization (legacy spelling; see singular form, event).",
         "type": "Event"
       },
       {
@@ -52,7 +63,15 @@
       {
         "name": "geo",
         "description": "The geo coordinates of the place.",
-        "type": "GeoCoordinates"
+        "type": [
+          "GeoCoordinates",
+          "GeoShape"
+        ]
+      },
+      {
+        "name": "globalLocationNumber",
+        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+        "type": "Text"
       },
       {
         "name": "interactionCount",
@@ -60,21 +79,54 @@
         "type": "Text"
       },
       {
-        "name": "maps",
+        "name": "isicV4",
+        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+        "type": "Text"
+      },
+      {
+        "name": "logo",
+        "description": "URL of an image for the logo of the item.",
+        "type": "ImageObject"
+      },
+      {
+        "name": "map",
         "description": "A URL to a map of the place.",
         "type": "URL"
       },
       {
-        "name": "photos",
-        "description": "Photographs of this place.",
+        "name": "maps",
+        "description": "A URL to a map of the place (legacy spelling; see singular form, map).",
+        "type": "URL"
+      },
+      {
+        "name": "openingHoursSpecification",
+        "description": "The opening hours of a certain place.",
+        "type": "OpeningHoursSpecification"
+      },
+      {
+        "name": "photo",
+        "description": "A photograph of this place.",
         "type": [
-          "Photograph",
-          "ImageObject"
+          "ImageObject",
+          "Photograph"
         ]
       },
       {
+        "name": "photos",
+        "description": "Photographs of this place (legacy spelling; see singular form, photo).",
+        "type": [
+          "ImageObject",
+          "Photograph"
+        ]
+      },
+      {
+        "name": "review",
+        "description": "A review of the item.",
+        "type": "Review"
+      },
+      {
         "name": "reviews",
-        "description": "Review of the item.",
+        "description": "Review of the item (legacy spelling; see singular form, review).",
         "type": "Review"
       },
       {
