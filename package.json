@@ -10,17 +10,16 @@
   "keywords": ["schemas", "jsdom", "parsers"],
   "dependencies": {
     "async": "0.1.x",
-    "colors": "0.x.x",
+    "colors": "0.6.0-1",
     "cliff": "0.x.x",
-    "jsdom": "0.2.x",
+    "jsdom": "0.3.x",
     "neuron": "0.4.x",
-    "optimist": "0.2.x",
+    "optimist": "0.3.x",
     "pkginfo": "0.2.x",
-    "request": "2.1.x",
-    "winston": "0.5.x",
-    "validator": "0.2.x"
+    "request": "2.x.x",
+    "winston": "~0.6.2",
+    "validator": "0.4.x"
   },
-  "scripts": { "test": "vows test/*-test.js --spec" },
   "bin": {
     "read-schema-org": "./bin/read-schema-org",
     "parse-schema": "./bin/parse-schema",
