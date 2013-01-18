@@ -1,5 +1,6 @@
 {
   "type": "Offer",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -48,7 +49,7 @@
     {
       "name": "price",
       "description": "The offer price of the product.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "priceCurrency",

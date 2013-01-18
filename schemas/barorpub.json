@@ -1,5 +1,6 @@
 {
   "type": "BarOrPub",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -52,7 +53,10 @@
       {
         "name": "geo",
         "description": "The geo coordinates of the place.",
-        "type": "GeoCoordinates"
+        "type": [
+          "GeoCoordinates",
+          "GeoShape"
+        ]
       },
       {
         "name": "interactionCount",
@@ -157,12 +161,12 @@
       {
         "name": "acceptsReservations",
         "description": "Either Yes/No, or a URL at which reservations can be made.",
-        "type": "Text or URL"
+        "type": "TextorURL"
       },
       {
         "name": "menu",
         "description": "Either the actual menu or a URL of the menu.",
-        "type": "Text or URL"
+        "type": "TextorURL"
       },
       {
         "name": "servesCuisine",

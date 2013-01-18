@@ -1,5 +1,6 @@
 {
   "type": "WebPageElement",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -30,9 +31,24 @@
         "type": "Thing"
       },
       {
+        "name": "accountablePerson",
+        "description": "Specifies the Person that is legally accountable for the CreativeWork.",
+        "type": "Person"
+      },
+      {
         "name": "aggregateRating",
         "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
         "type": "AggregateRating"
+      },
+      {
+        "name": "alternativeHeadline",
+        "description": "A secondary title of the CreativeWork.",
+        "type": "Text"
+      },
+      {
+        "name": "associatedMedia",
+        "description": "The media objects that encode this creative work. This property is a synonym for encodings.",
+        "type": "MediaObject"
       },
       {
         "name": "audio",
@@ -53,6 +69,11 @@
         "type": "Text"
       },
       {
+        "name": "comment",
+        "description": "Comments, typically from users, on this CreativeWork.",
+        "type": "UserComments"
+      },
+      {
         "name": "contentLocation",
         "description": "The location of the content.",
         "type": "Place"
@@ -63,13 +84,57 @@
         "type": "Text"
       },
       {
+        "name": "contributor",
+        "description": "A secondary contributor to the CreativeWork.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
+      },
+      {
+        "name": "copyrightHolder",
+        "description": "The party holding the legal copyright to the CreativeWork.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
+      },
+      {
+        "name": "copyrightYear",
+        "description": "The year during which the claimed copyright for the CreativeWork was first asserted.",
+        "type": "Number"
+      },
+      {
+        "name": "creator",
+        "description": "The creator/author of this CreativeWork or UserComments. This is the same as the Author property for CreativeWork.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
+      },
+      {
+        "name": "dateCreated",
+        "description": "The date on which the CreativeWork was created.",
+        "type": "Date"
+      },
+      {
+        "name": "dateModified",
+        "description": "The date on which the CreativeWork was most recently modified.",
+        "type": "Date"
+      },
+      {
         "name": "datePublished",
         "description": "Date of first broadcast/publication.",
         "type": "Date"
       },
       {
+        "name": "discussionUrl",
+        "description": "A link to the page containing the comments of the CreativeWork.",
+        "type": "URL"
+      },
+      {
         "name": "editor",
-        "description": "Editor for this content.",
+        "description": "Specifies the Person who edited the CreativeWork.",
         "type": "Person"
       },
       {
@@ -108,9 +173,22 @@
         "type": "Text"
       },
       {
+        "name": "mentions",
+        "description": "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+        "type": "Thing"
+      },
+      {
         "name": "offers",
         "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
         "type": "Offer"
+      },
+      {
+        "name": "provider",
+        "description": "Specifies the Person or Organization that distributed the CreativeWork.",
+        "type": [
+          "Person",
+          "Organization"
+        ]
       },
       {
         "name": "publisher",
@@ -118,9 +196,29 @@
         "type": "Organization"
       },
       {
+        "name": "publishingPrinciples",
+        "description": "Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.",
+        "type": "URL"
+      },
+      {
         "name": "reviews",
         "description": "Review of the item.",
         "type": "Review"
+      },
+      {
+        "name": "sourceOrganization",
+        "description": "The Organization on whose behalf the creator was working.",
+        "type": "Organization"
+      },
+      {
+        "name": "thumbnailUrl",
+        "description": "A thumbnail image relevant to the Thing.",
+        "type": "URL"
+      },
+      {
+        "name": "version",
+        "description": "The version of the CreativeWork embodied by a specified resource.",
+        "type": "Number"
       },
       {
         "name": "video",

@@ -1,5 +1,6 @@
 {
   "type": "AggregateRating",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -27,7 +28,7 @@
       {
         "name": "bestRating",
         "description": "The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.",
-        "type": "Number or Text"
+        "type": "NumberorText"
       },
       {
         "name": "ratingValue",
@@ -37,7 +38,7 @@
       {
         "name": "worstRating",
         "description": "The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.",
-        "type": "Number or Text"
+        "type": "NumberorText"
       }
     ]
   },

@@ -1,5 +1,6 @@
 {
   "type": "AggregateOffer",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -47,7 +48,7 @@
       {
         "name": "price",
         "description": "The offer price of the product.",
-        "type": "Number or Text"
+        "type": "NumberorText"
       },
       {
         "name": "priceCurrency",
@@ -75,12 +76,12 @@
     {
       "name": "highPrice",
       "description": "The highest price of all offers available.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "lowPrice",
       "description": "The lowest price of all offers available.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "offerCount",

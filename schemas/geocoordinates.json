@@ -1,5 +1,6 @@
 {
   "type": "GeoCoordinates",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -28,17 +29,17 @@
     {
       "name": "elevation",
       "description": "The elevation of a location.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "latitude",
       "description": "The latitude of a location. For example 37.42242.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     },
     {
       "name": "longitude",
       "description": "The longitude of a location. For example -122.08585.",
-      "type": "Number or Text"
+      "type": "NumberorText"
     }
   ]
 }

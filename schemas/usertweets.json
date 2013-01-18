@@ -1,5 +1,6 @@
 {
   "type": "UserTweets",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {

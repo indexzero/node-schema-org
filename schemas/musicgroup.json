@@ -1,5 +1,6 @@
 {
   "type": "MusicGroup",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
@@ -107,6 +108,11 @@
       "name": "albums",
       "description": "A collection of music albums.",
       "type": "MusicAlbum"
+    },
+    {
+      "name": "musicGroupMember",
+      "description": "A member of the music group—for example, John, Paul, George, or Ringo.",
+      "type": "Person"
     },
     {
       "name": "tracks",

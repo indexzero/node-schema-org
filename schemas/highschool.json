@@ -1,5 +1,6 @@
 {
   "type": "HighSchool",
+  "version": "Schema Draft Version 0.9",
   "bases": {
     "Thing": [
       {
